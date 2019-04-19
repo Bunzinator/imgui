@@ -2,7 +2,7 @@ project "ImGui"
     kind "StaticLib"
     language "C++"
 	cppdialect "C++17"
-    staticruntime "On"
+    staticruntime "on"
     
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -20,6 +20,11 @@ project "ImGui"
         "imstb_truetype.h",
         "imgui_demo.cpp"
     }
+
+	defines
+	{
+	    "_CRT_SECURE_NO_WARNINGS"
+	}
     
 	filter "system:windows"
         systemversion "latest"
